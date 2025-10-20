@@ -1,0 +1,52 @@
+Perfil ficticio Hotel
+    Hotel Paraíso del Pacífico
+    Ubicación: Playa Costa del Sol, La Paz, El Salvador
+    Categoría: Resort Todo Incluido ★★★★
+    Descripción General
+    El Hotel Paraíso del Pacífico es un resort todo incluido frente al mar, diseñado para ofrecer a sus huéspedes una experiencia inolvidable de descanso, diversión y confort. Rodeado de palmeras, con acceso directo a la playa y amplias áreas verdes, combina lujo y tradición salvadoreña en un solo lugar.
+ Habitaciones
+    El hotel cuenta con 250 habitaciones modernas, con balcones o terrazas privadas y decoradas con un estilo tropical.
+    Tipos de habitaciones:
+        Habitación Estándar Vista Jardín
+            Camas Queen o King.
+            Aire acondicionado, TV satelital, minibar y caja de seguridad.
+            Capacidad: 2 a 3 personas.
+        Habitación Superior Vista al Mar
+            Balcón privado con hamaca.
+            Servicio de café en la habitación.
+            Capacidad: 2 adultos + 2 niños.
+        Suites Familiares
+            Dos habitaciones conectadas, sala de estar y comedor.
+            Perfecta para familias numerosas.
+            Capacidad: 5 a 6 personas.
+        Villa Privada con Piscina
+            Exclusivas, con piscina privada y servicio de mayordomo.
+            Ideal para lunas de miel o estadías VIP.
+Restaurantes y Bares
+    Restaurante El Mar y Sol: Buffet internacional con estaciones de comida en vivo.
+    Restaurante Rancho Costero: Especialidad en mariscos y cocina salvadoreña.
+    Restaurante La Toscana: Cocina italiana a la carta.
+    Snack Bar La Palapa: Hamburguesas, pizzas y tacos cerca de la piscina.
+    5 Bares Temáticos: Incluyendo un bar en la piscina y un “lobby bar” con música en vivo.
+Servicios y Amenidades
+    3 Piscinas (una de ellas con bar acuático).
+    Club de Playa privado con camastros y sombrillas.
+    Spa & Wellness Center con masajes, sauna y yoga.
+    Gimnasio moderno con entrenadores personales.
+    Cancha de vóley playa, tenis y fútbol.
+    Discoteca "Olas" con shows nocturnos y música en vivo.
+    Club Infantil y Junior con actividades supervisadas.
+    Tours y excursiones:
+        Paseos en lancha por el estero de Jaltepeque.
+        Visitas guiadas a volcanes y pueblos turísticos como Suchitoto o Ataco.
+Servicios adicionales
+    Internet Wi-Fi en áreas comunes.
+    Transporte privado al aeropuerto.
+    Salones para eventos corporativos y bodas en la playa.
+    Servicio médico disponible 24/7.
+    Tienda de recuerdos y artesanías locales.
+Concepto Todo Incluido
+    Desayuno, almuerzo y cena tipo buffet o a la carta.
+    Bebidas alcohólicas y no alcohólicas ilimitadas.
+    Snacks durante el día.
+    Actividades diarias (aeróbicos, deportes acuáticos no motorizados, shows en vivo).
