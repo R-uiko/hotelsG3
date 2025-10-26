@@ -1,17 +1,141 @@
-<!-- (Restaurantes y Bares)
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurantes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Restaurantes</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="imagenes/restaurante-azul.jpg"
+              class="card-img-top"
+              alt="Restaurante del Mar"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Restaurante del Mar</h5>
+              <p class="card-text">
+                Gastronomía local frente al mar con un toque gourmet.
+              </p>
+              <button
+                class="btn btn-info m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalInfoMar"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-primary m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMenuMar"
+              >
+                Ver menú
+              </button>
+              <button
+                class="btn btn-success m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalReservarMar"
+              >
+                Reservar mesa
+              </button>
+            </div>
+          </div>
+        </div>
 
-Introducción gastronómica (texto + imagen del buffet).
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="imagenes/gourmet_restaurant.jpg"
+              class="card-img-top"
+              alt="Sabores del Pacífico"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Sabores del Pacífico</h5>
+              <p class="card-text">
+                Disfruta de una fusión de sabores tropicales con un toque
+                gourmet.
+              </p>
+              <button
+                class="btn btn-info m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalInfoPacifico"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-primary m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMenuPacifico"
+              >
+                Ver menú
+              </button>
+              <button
+                class="btn btn-success m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalReservarPacifico"
+              >
+                Reservar mesa
+              </button>
+            </div>
+          </div>
+        </div>
 
-Restaurantes (cada uno con foto + descripción)
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="imagenes/cafe.jpg"
+              class="card-img-top"
+              alt="Café Paraíso"
+            />
+            <div class="card-body text-center">
+              <h5 class="card-title">Café Paraíso</h5>
+              <p class="card-text">
+                Un espacio tranquilo para disfrutar café artesanal y postres
+                caseros.
+              </p>
+              <button
+                class="btn btn-info m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalInfoCafe"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-primary m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMenuCafe"
+              >
+                Ver menú
+              </button>
+              <button
+                class="btn btn-success m-1"
+                data-bs-toggle="modal"
+                data-bs-target="#modalReservarCafe"
+              >
+                Reservar mesa
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-ES un ejemplo :
+    <div id="modalContainer"></div>
+    <div
+      id="toastContainer"
+      class="position-fixed bottom-0 end-0 p-3"
+      style="z-index: 11"
+    ></div>
 
-El Mar y Sol (buffet internacional).
-
-Rancho Costero (mariscos).
-
-La Toscana (italiana).
-
-Snack Bar La Palapa.
-
-Bares temáticos (sección separada con íconos o fotos: bar en piscina, lobby bar, etc.).-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/restaurants.js"></script>
+  </body>
+</html>
