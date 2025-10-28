@@ -48,6 +48,36 @@
     });
   }
 
+
+/*
+   
+  function inicializarToast() {
+    const toastEl = $("#appToast");
+    if (toastEl && typeof bootstrap !== 'undefined') {
+      return new bootstrap.Toast(toastEl);
+    }
+    return null;
+  }
+
+  const toast = inicializarToast();
+
+  function mostrarToast(mensaje, tipo = "info") {
+    console.log(` Toast [${tipo}]:`, mensaje);
+    
+    if (toast) {
+      const body = $("#appToast .toast-body");
+      if (body) {
+        body.textContent = mensaje;
+        $("#appToast").className = `toast align-items-center text-white border-0 bg-${tipo}`;
+        toast.show();
+      }
+    } else {
+      // Fallback si Bootstrap no está disponible
+      alert(mensaje);
+    }
+  }
+*/ 
+
   const registroForm = $("#registerForm");
   if (registroForm) {
     registroForm.addEventListener("submit", (e) => {
