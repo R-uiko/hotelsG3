@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividades - Hotel Paraíso del Pacífico</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/activities.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center mb-4 text-success">Actividades del Hotel</h1>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card activity-card">
+            <img src="imagenes/tour.jpg" class="card-img-top" alt="Tour playa" />
+            <div class="card-body">
+              <h5 class="card-title">Tour por la Playa</h5>
+              <p class="card-text">
+                Explora las costas del Pacífico con un guía especializado y
+                disfruta del atardecer.
+              </p>
+              <button
+                class="btn btn-outline-success me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#infoModal1"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#reserveModal1"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card activity-card">
+            <img src="imagenes/surf.jpg" class="card-img-top" alt="Yoga" />
+            <div class="card-body">
+              <h5 class="card-title">Clases de surf</h5>
+              <p class="card-text">
+                Aprende surf con instructores certificados en olas ideales para
+                principiantes.
+              </p>
+              <button
+                class="btn btn-outline-success me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#infoModal2"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#reserveModal2"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card activity-card">
+            <img src="imagenes/kayak.jpg" class="card-img-top" alt="Kayak" />
+            <div class="card-body">
+              <h5 class="card-title">Paseo en Kayak</h5>
+              <p class="card-text">
+                Disfruta un recorrido por la bahía en kayak y contempla la fauna
+                marina local.
+              </p>
+              <button
+                class="btn btn-outline-success me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#infoModal3"
+              >
+                Más información
+              </button>
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#reserveModal3"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modales de información -->
+    <div class="modal fade" id="infoModal1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Tour por la Playa</h5>
+          </div>
+          <div class="modal-body">
+            Explora la playa en un recorrido guiado de 2 horas, con vistas
+            espectaculares y bebida de cortesía.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="infoModal2" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Clases de Yoga</h5>
+          </div>
+          <div class="modal-body">
+            Clases con instructores certificados en una playa segura para principiantes.<p> Duración: 1.5 horas | Nivel: Principiante | Incluye tabla y traje.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="infoModal3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Paseo en Kayak</h5>
+          </div>
+          <div class="modal-body">
+            Una experiencia acuática guiada por expertos. Duración: 90 minutos,
+            equipo incluido.
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modales de reserva -->
+    <div class="modal fade" id="reserveModal1" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Reservar Tour por la Playa</h5>
+          </div>
+          <div class="modal-body">
+            <p>Selecciona la cantidad de personas:</p>
+            <select id="personas1" class="form-select">
+              <option>1 persona</option>
+              <option>2 personas</option>
+              <option>3 personas</option>
+              <option>4 personas</option>
+              <option>5 personas</option>
+              <option>6 personas</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-success" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="btn btn-success reservar-btn"
+              data-bs-dismiss="modal"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="reserveModal2" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Reservar Clase de Yoga</h5>
+          </div>
+          <div class="modal-body">
+            <p>Selecciona la cantidad de personas:</p>
+            <select id="personas2" class="form-select">
+              <option>1 persona</option>
+              <option>2 personas</option>
+              <option>3 personas</option>
+              <option>4 personas</option>
+              <option>5 personas</option>
+              <option>6 personas</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-success" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="btn btn-success reservar-btn"
+              data-bs-dismiss="modal"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="reserveModal3" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Reservar Paseo en Kayak</h5>
+          </div>
+          <div class="modal-body">
+            <p>Selecciona la cantidad de personas:</p>
+            <select id="personas3" class="form-select">
+              <option>1 persona</option>
+              <option>2 personas</option>
+              <option>3 personas</option>
+              <option>4 personas</option>
+              <option>5 personas</option>
+              <option>6 personas</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-success" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              class="btn btn-success reservar-btn"
+              data-bs-dismiss="modal"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="reservaToast"
+        class="toast bg-success text-white border-0"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body"> Reserva realizada con éxito.</div>
+          <button
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/activities.js"></script>
+  </body>
+</html>
