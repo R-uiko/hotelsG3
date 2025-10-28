@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     reservas.push(nuevaReserva);
     localStorage.setItem('reservas', JSON.stringify(reservas));
 
-    alert('✅ Reserva guardada correctamente');
+    alert('Reserva guardada correctamente');
 
     formReserva.reset();
     modal.hide();

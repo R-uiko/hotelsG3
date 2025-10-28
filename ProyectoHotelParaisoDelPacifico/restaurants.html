@@ -10,7 +10,7 @@
 <body>
 <div id="header-container"></div>
   <div class="container py-5">
-    <h1 class="text-center mb-4 text-success">Restaurantes del Hotel</h1>
+    <h1 class="fw-bold text-center mb-5 ">Restaurantes del Hotel</h1>
 
     <div class="row g-4">
       <!-- Card 1 -->
@@ -21,7 +21,7 @@
             <h5 class="card-title">Restaurante del Mar</h5>
             <p class="card-text">Sabores frescos del mar en un ambiente relajado frente al océano.</p>
             <button class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#menuModal1">Ver menú</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reserveModal1">Reservar</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserveModal1">Reservar</button>
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
             <p class="card-text">Disfruta de una fusión de sabores tropicales con un toque
                 gourmet.</p>
             <button class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#menuModal2">Ver menú</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reserveModal2">Reservar</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserveModal2">Reservar</button>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
             <h5 class="card-title">Café Pacífico</h5>
             <p class="card-text">Café artesanal, postres caseros y ambiente acogedor para relajarte.</p>
             <button class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#menuModal3">Ver menú</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reserveModal3">Reservar</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reserveModal3">Reservar</button>
           </div>
         </div>
       </div>
@@ -151,38 +151,11 @@
     </div>
   </div>
     <div id="footer-container"></div>
-      <script>
-        // Cargar header
-        fetch('components/header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('No se pudo cargar el header');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error cargando el header:', error);
-                // Fallback: mostrar un header básico
-                document.getElementById('header-container').innerHTML = `
-                    <nav style="background: #001a33; padding: 10px; color: white;">
-                        <a href="index.html" style="color: white; text-decoration: none;">Hotel Paraíso del Pacífico</a>
-                    </nav>
-                `;
-            });
-
-        // Cargar footer (si lo tienes)
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error cargando footer:', error));
-    </script>
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/restaurants.js"></script>
+    <script src="js/includeHeader.js"></script>
+    <script src="js/login&registro.js"></script>
   </body>
 </html>
 

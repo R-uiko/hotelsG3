@@ -1,10 +1,10 @@
-(() => { 
+(() => {
   const STORAGE_KEY = "usuarios";
   const $ = (sel) => document.querySelector(sel);
 
   function cargarUsuarios() {
     try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? [];
     } catch {
       return [];
     }
@@ -14,23 +14,18 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
   }
 
-  //TOAST
   const toastEl = $("#appToast");
   let toast;
-  if (toastEl) {
-    toast = new bootstrap.Toast(toastEl);
-  }
+  if (toastEl) toast = new bootstrap.Toast(toastEl);
 
   function mostrarToast(mensaje, tipo = "info") {
     if (!toastEl) return;
     const body = toastEl.querySelector(".toast-body");
     body.textContent = mensaje;
-    toastEl.className = "toast align-items-center text-white border-0";
-    toastEl.classList.add(`bg-${tipo}`);
+    toastEl.className = `toast align-items-center text-white border-0 bg-${tipo}`;
     toast.show();
   }
 
-  //LOGIN
   const loginForm = $("#login");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -44,20 +39,20 @@
       );
 
       if (usuarioValido) {
-        mostrarToast(`Bienvenido ${usuarioValido.nombre}`, "success");
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioValido));
-        setTimeout(() => window.location.href = "index.html", 1500);
+        mostrarToast(`Bienvenido ${usuarioValido.nombre}`, "success");
+        setTimeout(() => (window.location.href = "index.html"), 1500);
       } else {
         mostrarToast("Correo o contraseña incorrectos.", "danger");
       }
     });
   }
 
-  //REGISTRO
-  const registroForm = $("#registroForm");
+  const registroForm = $("#registerForm");
   if (registroForm) {
     registroForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       const nombre = $("#nombre").value.trim();
       const correo = $("#correo").value.trim();
       const password = $("#password").value.trim();
@@ -77,28 +72,26 @@
 
       usuarios.push({ nombre, correo, password });
       guardarUsuarios(usuarios);
-
       mostrarToast("Registro exitoso. Ahora puedes iniciar sesión.", "success");
-      setTimeout(() => window.location.href = "login.html", 3000);
+
+      setTimeout(() => (window.location.href = "login.html"), 2500);
     });
   }
 
-  //CERRAR SESIÓN
   const cerrarSesionBtn = $("#cerrarSesion");
   if (cerrarSesionBtn) {
     cerrarSesionBtn.addEventListener("click", () => {
       localStorage.removeItem("usuarioActivo");
       mostrarToast("Has cerrado sesión correctamente.", "info");
-      setTimeout(() => window.location.href = "index.html", 1500);
+      setTimeout(() => (window.location.href = "index.html"), 1500);
     });
   }
 
-  // MOSTRA EL NOMBRE EN NAV Y OCULTAR REGISTRAR
-  document.addEventListener("DOMContentLoaded", () => {
+  function actualizarEstadoUsuario() {
     const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
-    const registroBtn = $("#registro-btn");   
-    const usuarioNav = $("#usuario-logueado");
-    const cerrarSesionNav = $("#cerrarSesion"); 
+    const registroBtn = document.getElementById("registro-btn");
+    const usuarioNav = document.getElementById("usuario-logueado");
+    const cerrarSesionNav = document.getElementById("cerrarSesion");
 
     if (usuarioActivo) {
       if (registroBtn) registroBtn.style.display = "none";
@@ -112,5 +105,20 @@
       if (cerrarSesionNav) cerrarSesionNav.style.display = "none";
       if (registroBtn) registroBtn.style.display = "inline";
     }
+
+    if (cerrarSesionNav) {
+      cerrarSesionNav.addEventListener("click", () => {
+        localStorage.removeItem("usuarioActivo");
+        alert("Has cerrado sesión correctamente.");
+        window.location.href = "index.html";
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    actualizarEstadoUsuario();
   });
+
+  window.actualizarEstadoUsuario = actualizarEstadoUsuario;
 })();

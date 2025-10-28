@@ -9,7 +9,7 @@
   <body class="bg-light">
          <div id="header-container"></div>
     <div class="container my-5">
-      <h2 class="text-center mb-4">Contacto</h2>
+      <h2 class="fw-bold mb-5 text-center">Contacto</h2>
       
       <div class="row g-4">
         <div class="col-lg-5">
@@ -140,37 +140,10 @@
     <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11;"></div>
 
     <div id="footer-container"></div>
-     <script>
-        // Cargar header
-        fetch('components/header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('No se pudo cargar el header');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error cargando el header:', error);
-                // Fallback: mostrar un header básico
-                document.getElementById('header-container').innerHTML = `
-                    <nav style="background: #001a33; padding: 10px; color: white;">
-                        <a href="index.html" style="color: white; text-decoration: none;">Hotel Paraíso del Pacífico</a>
-                    </nav>
-                `;
-            });
-
-        // Cargar footer (si lo tienes)
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error cargando footer:', error));
-    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/includeHeader.js"></script>
+    <script src="js/login&registro.js"></script>    
   </body>
 </html>
