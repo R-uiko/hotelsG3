@@ -1,21 +1,3 @@
-<!-- (Servicios y Amenidades)
-
-Piscinas (incluyendo bar acuático).
-
-Club de playa privado.
-
-Spa & Wellness (masajes, yoga, sauna).
-
-Gimnasio moderno.
-
-Deportes (vóley playa, tenis, fútbol).
-
-Discoteca "Olas".
-
-Club infantil y junior.
-
-Presentarlo con íconos, fotos y texto corto para hacerlo atractivo.-->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,12 +18,13 @@ Presentarlo con íconos, fotos y texto corto para hacerlo atractivo.-->
   <link rel="stylesheet" href="css/services.css">
 </head>
 <body>
-
-  <!-- Banner -->
-  <header class="banner d-flex align-items-center justify-content-center flex-column text-center py-5 bg-primary text-white">
-    <h1>Servicios del Hotel</h1>
-    <p>Confort, comodidad y experiencias únicas durante tu estancia</p>
-  </header>
+ <div id="header-container"></div>
+ <!-- Banner -->
+<header class="banner d-flex align-items-center justify-content-center flex-column text-center py-5 bg-primary text-white">
+  <h1>Servicios del Hotel</h1>
+  <p>Confort, comodidad y experiencias únicas durante tu estancia</p>
+  <a href="#servicios" class="btn btn-light mt-3 px-4 py-2 fw-semibold shadow-sm">Explorar servicios</a>
+</header>
 
   <!-- Sección de Servicios -->
   <section id="servicios" class="container my-5">
@@ -143,7 +126,37 @@ Presentarlo con íconos, fotos y texto corto para hacerlo atractivo.-->
       </div>
     </div>
   </div>
+  <div id="footer-container"></div>
+  <script>
+        // Cargar header
+        fetch('components/header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar el header');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error cargando el header:', error);
+                // Fallback: mostrar un header básico
+                document.getElementById('header-container').innerHTML = `
+                    <nav style="background: #001a33; padding: 10px; color: white;">
+                        <a href="index.html" style="color: white; text-decoration: none;">Hotel Paraíso del Pacífico</a>
+                    </nav>
+                `;
+            });
 
+        // Cargar footer (si lo tienes)
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando footer:', error));
+    </script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
