@@ -26,6 +26,26 @@
     toast.show();
   }
 
+  function crearAdminPorDefecto() {
+    const usuarios = cargarUsuarios();
+    const adminExiste = usuarios.find(u => u.correo === "admin@hotel.com");
+    
+    if (!adminExiste) {
+      usuarios.push({
+        nombre: "Administrador",
+        correo: "ad@hotel.com",
+        password: "admin123"
+        
+      });
+      guardarUsuarios(usuarios);
+      console.log("Usuario admin creado: admin@hotel.com / admin123");
+    }
+  }
+
+  function esAdministrador(usuario) {
+    return usuario.correo === "admin@hotel.com";
+  }
+
   const loginForm = $("#login");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
@@ -41,43 +61,18 @@
       if (usuarioValido) {
         localStorage.setItem("usuarioActivo", JSON.stringify(usuarioValido));
         mostrarToast(`Bienvenido ${usuarioValido.nombre}`, "success");
-        setTimeout(() => (window.location.href = "index.html"), 1500);
+        
+        if (esAdministrador(usuarioValido)) {
+          setTimeout(() => (window.location.href = "index.html?admin=true"), 1500);
+        } else {
+          setTimeout(() => (window.location.href = "index.html"), 1500);
+        }
       } else {
         mostrarToast("Correo o contraseña incorrectos.", "danger");
       }
     });
   }
-
-
-/*
-   
-  function inicializarToast() {
-    const toastEl = $("#appToast");
-    if (toastEl && typeof bootstrap !== 'undefined') {
-      return new bootstrap.Toast(toastEl);
-    }
-    return null;
-  }
-
-  const toast = inicializarToast();
-
-  function mostrarToast(mensaje, tipo = "info") {
-    console.log(` Toast [${tipo}]:`, mensaje);
-    
-    if (toast) {
-      const body = $("#appToast .toast-body");
-      if (body) {
-        body.textContent = mensaje;
-        $("#appToast").className = `toast align-items-center text-white border-0 bg-${tipo}`;
-        toast.show();
-      }
-    } else {
-      // Fallback si Bootstrap no está disponible
-      alert(mensaje);
-    }
-  }
-*/ 
-
+  
   const registroForm = $("#registerForm");
   if (registroForm) {
     registroForm.addEventListener("submit", (e) => {
@@ -100,7 +95,11 @@
         return;
       }
 
-      usuarios.push({ nombre, correo, password });
+      usuarios.push({ 
+        nombre, 
+        correo, 
+        password
+      });
       guardarUsuarios(usuarios);
       mostrarToast("Registro exitoso. Ahora puedes iniciar sesión.", "success");
 
@@ -128,6 +127,9 @@
       if (usuarioNav) {
         usuarioNav.style.display = "inline";
         usuarioNav.textContent = `Hola, ${usuarioActivo.nombre}`;
+        if (esAdministrador(usuarioActivo)) {
+          usuarioNav.textContent += " (Admin)";
+        }
       }
       if (cerrarSesionNav) cerrarSesionNav.style.display = "inline";
     } else {
@@ -146,7 +148,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-
+    crearAdminPorDefecto(); 
     actualizarEstadoUsuario();
   });
 
