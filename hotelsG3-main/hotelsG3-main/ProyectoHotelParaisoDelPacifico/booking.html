@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservas - Hotel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background-color: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <!-- Header dinámico -->
+  <div id="header-container"></div>
+
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="h3">Reservas de usuarios</h1>
+      <span id="rol-actual" class="badge bg-secondary d-none">Rol</span>
+    </div>
+
+    <div id="alerta" class="alert alert-warning d-none"></div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped align-middle" id="tablaReservas">
+            <thead class="table-success">
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Habitación</th>
+                <th>Entrada</th>
+                <th>Salida</th>
+                <th>Personas</th>
+                <th>Comentarios</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer dinámico -->
+  <div id="footer-container"></div>
+
+  <!-- Toast para mensajes -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast align-items-center text-white border-0 bg-info" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">Mensaje</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/includeHeader.js"></script>
+  <script src="js/login&registro.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
